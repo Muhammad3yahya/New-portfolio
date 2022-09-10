@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link  rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Portfolio</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: 'Quicksand' , sans-serif;
+            color: black;
+        }
+        header {
+            height: 70px;
+        }
+        header h1{
+            display: inline-block;
+            float: left;
+            padding: 15px 24px;
+            text-transform: uppercase;
+        }
+        header h1 a {
+            transition: .3s;
+        }
+        header h1 a:hover {
+            color: #EF5350;
+        }
+        header ul{
+            float: right;
+        }
+        header ul li a {
+            transition: .3s;
+        }
+        header ul li a:hover{
+            color: #EF5350;
+        }
+        header ul li{
+            padding: 24px;
+            display: inline-block;
+        }
+        a {
+            text-decoration: none;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+
+        }
+        .container::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .mobile-menu {
+            float: right;
+            display: none;
+            padding: 18px;
+        }
+        .mobile-menu:hover{
+            cursor: pointer;
+        }
+        #check {
+            display: none;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: -300px;
+            width: 250px;
+            background-color: rgba(30, 136, 229, .9);
+            transition: .3s;
+            z-index: 9999;
+        }
+        .sidebar ul li a{
+            color: white;
+        }
+        .sidebar ul li {
+            padding: 30px;
+            transition: .3s;
+            transition-property: background-color;
+           
+            
+        }
+        .sidebar ul li:hover {
+            background-color: #EF5350;
+            
+            
+        }
+        #check:checked ~ .sidebar {
+            left: 0;
+        }
+        img {
+            width: 100px;
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 0 3px 5px #ddd;
+            margin-bottom: 10px;
+        }
+        .banner h2,
+        .banner p, 
+        .banner span{
+            color: #fff;
+        }
+        .banner{
+            background-color:#3168F5;
+            padding: 120px 0;
+        }
+        .banner h2{
+            margin-bottom: 10px;
+        }
+        .banner p {
+            font-size: 18px;
+        }
+        section{
+            padding: 50px 0;
+        }
+        .banner-left{
+            padding-left: 24px;
+        }
+        section h3::before {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            width: 120px;
+            height: 1px;
+            background-color: #ddd;
+            left: calc(50% - 60px);
+
+        }
+        section h3::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -1px;
+            width: 40px;
+            height: 4px;
+            background-color:red;
+            left: calc(50% - 20px);
+        }
+        section h3{
+            padding-bottom: 20px;
+            text-align: center;
+            position: relative;
+        }
+        #about p{
+            text-align: justify;
+            text-indent: 30px;
+            line-height: 25px;
+            margin-bottom: 15px;
+        }
+        #skills,
+        #contact {
+            background-color: #f9f9f9;
+        }
+        #skills .bar{
+            height: 30px;
+            background-color: white;
+            border: 1px solid;
+            margin: 5px 0 20px 0;
+            
+
+
+        }
+        .bar .nilai{
+            height: 30px;
+            width: 90%;
+            background-color: #EF5350;
+            display: inline-block;
+            color: white;
+            text-align: center;
+        }
+        .col-4{
+            width: 25%;
+            box-sizing: border-box;
+            padding: 5px;
+            float: left;
+            text-align: center;
+            margin-bottom: 15px;
+            margin
+         }
+        .col-4 img{
+            width:100%;
+        }
+        .col-4 a:hover img{
+            transform: scale(1.2);
+            transition: .3s;
+        }
+        .col-3{
+            padding: 50px 50px;
+            float: left;
+            width: 33.33%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .col-3 h4{
+            padding-bottom: 10px;
+            border-bottom: 1px solid;
+            margin-bottom: 15px;
+        }
+        footer{
+            background-color: #333;
+            padding: 50px;
+            text-align: center;
+        }
+        footer small{
+            color: white;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        
+
+        @media (max-width: 768px){
+            .mobile-menu {
+                display: block;
+            }
+            header ul {
+                display: none;
+            }
+            .col-4{
+                width: 50%;
+            }
+            .col-3{
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!--sidebar menu-->
+    <input type="checkbox" id="check">
+    <div class="sidebar">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skill</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    <!-- bagian header-->
+    <header>
+      <div class="container">
+        <h1><a href="">Muhamad Yahya</a></h1>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <!--mobile menu-->
+        <label for="check" class="mobile-menu"><i class="fa-solid fa-bars fa-2x"></i></label>
+      </div>
+    </header>
+    <!--bagian banner-->
+        <section class="banner">
+            <div class="container">
+                <div class="banner-left">
+                    <img src="Yahya.jpg" title="Profile" alt="Profile">
+                    <h2>Halo...<br>
+                    Saya adalah seorang <span class="efek-ngetik"></span></h2>
+                    <p>Selamat Datang Di Website Portflio Saya </p>
+                </div>
+                </div>
+        </section>
+        <!--bagian about -->
+        <section id="about">
+            <div class="container">
+                <h3>About</h3>
+                <br><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></br>
+            </div>
+        </section>
+        <!--bagian skills-->
+        <section id="skills">
+            <div class="container">
+                <h3>Skills</h3>
+                <h4>Html</h4>
+                <div class="bar"><span class="nilai">90%</span></div>
+                <h4>Css</h4>
+                <div class="bar"><span class="nilai">90%</span></div>
+                <h4>Java Script</h4>
+                <div class="bar"><span class="nilai">90%</span></div>
+                <h4>Photosop</h4>
+                <div class="bar"><span class="nilai">90%</span></div>
+            </div>
+            </div>
+            </div>
+            </div>
+            
+        </section>
+        <!--bagian portfolio-->
+        <section id="portfolio">
+            <div class="container">
+                <h3>Portfolio</h3>
+                <div class="col-4">
+                    <a href="">
+                        <img src="hacker.jpg" alt="">
+                        <span>portfolio1</span>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a href="">
+                        <img src="hacker.jpg" alt="">
+                        <span>portfolio1</span>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a href="">
+                        <img src="hacker.jpg" alt="">
+                        <span>portfolio1</span>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a href="">
+                        <img src="hacker.jpg" alt="">
+                        <span>portfolio1</span>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a href="">
+                        <img src="hacker.jpg" alt="">
+                        <span>portfolio1</span>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a href="">
+                        <img src="hacker.jpg" alt="">
+                        <span>portfolio1</span>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a href="">
+                        <img src="hacker.jpg" alt="">
+                        <span>portfolio1</span>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a href="">
+                        <img src="hacker.jpg" alt="">
+                        <span>portfolio1</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!--bagian contact-->
+        <section id="contact">
+            <div class="container">
+                <h3>Contact</h3>
+                <div class="col-3">
+                    <h4>Alamat</h4>
+                    <p>Dsn.Ciangini kec.Cikoneng</p>
+                </div>
+                <div class="col-3">
+                    <h4>Email</h4>
+                    <p>yahyakyb36@gmail.com</p>
+                </div>
+                <div class="col-3">
+                    <h4>Telp/Hp</h4>
+                    <p>085623574548</p>
+                </div>
+            </div>
+        </section>
+        <!--bagian footer-->
+        <footer>
+            <div class="container">
+                <small>copyrigt &copy; 2020 Dzulfikar</small>
+            </div>
+        </div>
+        </footer>
+        <script src="script.js"></script>
+</body>
+</html>
